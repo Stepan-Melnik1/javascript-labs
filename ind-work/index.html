@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💣 Сапёр</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Шапка игры -->
+  <header class="header">
+    <h1 class="title">💣 Сапёр</h1>
+  </header>
+
+  <!-- Панель управления: сложность, кнопка старта -->
+  <div class="controls">
+    <div class="difficulty-btns">
+      <button class="diff-btn active" data-level="easy">Лёгкий</button>
+      <button class="diff-btn" data-level="medium">Средний</button>
+      <button class="diff-btn" data-level="hard">Сложный</button>
+    </div>
+    <button class="start-btn" id="startBtn">Новая игра</button>
+  </div>
+
+  <!-- Статус-бар: мины, таймер, рекорд -->
+  <div class="status-bar">
+    <div class="status-item">
+      <span class="status-icon">💣</span>
+      <span id="mineCount">0</span>
+    </div>
+    <div class="status-item">
+      <span class="status-icon">⏱</span>
+      <span id="timer">0</span>
+    </div>
+    <div class="status-item">
+      <span class="status-icon">🏆</span>
+      <span id="record">—</span>
+    </div>
+  </div>
+
+  <!-- Сюда JS будет вставлять клетки поля -->
+  <div class="board-wrapper">
+    <div class="board" id="board"></div>
+  </div>
+
+  <!-- Подсказка для новичков -->
+  <p class="hint">ЛКМ — открыть клетку &nbsp;|&nbsp; ПКМ — поставить флажок 🚩</p>
+
+  <!-- Модальное окно (победа / поражение) -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-emoji" id="modalEmoji"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <p class="modal-msg" id="modalMsg"></p>
+      <button class="modal-btn" id="modalBtn">Играть снова</button>
+    </div>
+  </div>
+
+  <!-- Подключаем JS-модули (type="module" — это ES6 модули) -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
